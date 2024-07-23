@@ -1,0 +1,31 @@
+[tool.mypy]
+plugins = ["mypy_django_plugin.main"]
+
+[tool.django-stubs]
+django_settings_module = "src.what_the_health.settings"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "what_the_health"
+version = "0.0.1"
+authors = [
+  { name="w0L-g0r", email="author@example.com" },
+]
+description = "An api package for what the health data"
+readme = "README.md"
+requires-python = ">=3.8"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
+
+[project.urls]
+Homepage = "https://github.com/w0L-g0R/WhatTheHealth"
+Issues = "https://github.com/w0L-g0R/WhatTheHealth/issues"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/what_the_health"]

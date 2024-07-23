@@ -1,8 +1,8 @@
 from pathlib import Path
+from django.core.management.commands.runserver import Command as runserver
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
-
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/5.0/howto/deployment/checklist/
@@ -13,7 +13,9 @@ SECRET_KEY = "django-insecure-%r@4430yb41dpny&@cwe!t*deh^g_6y^h7@z+2!4nj9r6cn85^
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
+runserver.default_port = '8888'
+runserver.default_addr = '127.0.0.1'
 
 
 # Application definition
@@ -39,7 +41,7 @@ MIDDLEWARE = [
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
 ]
 
-ROOT_URLCONF = "api.urls"
+ROOT_URLCONF = "src.what_the_health.urls"
 
 TEMPLATES = [
     {
@@ -57,7 +59,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = "api.wsgi.application"
+WSGI_APPLICATION = "src.what_the_health.wsgi.application"
 
 
 # Database
